@@ -19,7 +19,6 @@
     "moment-timezone": "^0.6.3",
     "pdfmake": "^0.3.11",
     "react": "^19.2.8",
-    "react-disable-select-copy": "^1.0.1",
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
