@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import DisableDevtool from 'disable-devtool';
-import DisableSelectCopy from 'react-disable-select-copy';
 import './App.css';
 
 // Import Heavy Libraries เพื่อดันขนาดไฟล์ .js ตอน Build
@@ -40,14 +39,14 @@ export default function App() {
   }, []);
 
   return (
-    <DisableSelectCopy>
+    <>
       <div className="hero">
         <img 
           className="hero-logo" 
           src="https://futur3sn0w.github.io/repo/CydiaIcon.png" 
           alt="F1X3R" 
         />
-        <h1>F1X3R Developer</h1>
+        <h1>F1X3R Store</h1>
         <p>Download Tweaked Apps & Moded Games for Free &nbsp;&middot;&nbsp; {PACKAGES.length} packages</p>
       </div>
 
@@ -93,6 +92,6 @@ export default function App() {
       <footer>
         <p>Made with ♡ by <a href="tg://user?id=6105731078">F1X3R</a></p>
       </footer>
-    </DisableSelectCopy>
+    </>
   );
 }
