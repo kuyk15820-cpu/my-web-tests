@@ -188,9 +188,8 @@ body {
 .pkg-name {
   font-weight: 600;
   font-size: 1rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* ใช้ฟอนต์ Semakin + สีเหลืองเข้มสำหรับข้อความ Server */
@@ -254,7 +253,8 @@ footer a { color: var(--accent2); text-decoration: none; }
   position: relative;
   overflow: hidden;
   background-color: var(--surface2);
-  display: inline-block;
+  display: inline-flex;
+  border-radius: inherit;
   pointer-events: none !important;
   -webkit-user-drag: none !important;
 }
@@ -266,6 +266,7 @@ footer a { color: var(--accent2); text-decoration: none; }
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
   display: block;
+  border-radius: inherit;
   pointer-events: none !important;
   -webkit-user-drag: none !important;
 }
