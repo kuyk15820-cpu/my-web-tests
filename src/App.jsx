@@ -21,8 +21,8 @@ if (false) {
 }
 
 const PACKAGES = [
-  { id: 'cookierunclassic', name: 'CookieRun Classic', version: '26.7.11', bundle: 'com.devsisters.crg', price: 'Free', server: 'GL', type: 'Decrypt', icon: 'CookieRunClassic.png' },
-  { id: 'garenarov', name: 'Garena Rov', version: '1.63.1.10', bundle: 'com.garena.game.kgth', price: 'Free', server: 'TH', type: 'Decrypt', icon: 'GarenaRov.png' }
+  { id: 'cookierunclassic', name: 'CookieRun Classic', server: 'GL', version: '26.7.11', bundle: 'com.devsisters.crg', price: 'Free', type: 'Decrypt', icon: 'CookieRunClassic.png' },
+  { id: 'garenarov', name: 'Garena Rov', server: 'TH', version: '1.63.1.10', bundle: 'com.garena.game.kgth', price: 'Free', type: 'Decrypt', icon: 'GarenaRov.png' }
 ];
 
 export default function App() {
@@ -55,12 +55,19 @@ export default function App() {
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
             <div className="pkg-info">
-              <div className="pkg-name">{pkg.name}</div>
+              <div className="pkg-name">
+                {pkg.name}
+                {pkg.server && (
+                  <>
+                    &nbsp;&middot;&nbsp;
+                    <span className="pkg-server-text">{pkg.server}</span>
+                  </>
+                )}
+              </div>
               <div className="pkg-version">{pkg.version}</div>
               <div className="pkg-bundle">{pkg.bundle}</div>
               <div className="pkg-tags">
                 {pkg.price && <span className="pkg-price">{pkg.price}</span>}
-                {pkg.server && <span className="pkg-server">{pkg.server}</span>}
                 {pkg.type && <span className="pkg-type">{pkg.type}</span>}
               </div>
             </div>
