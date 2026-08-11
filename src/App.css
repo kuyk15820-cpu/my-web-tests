@@ -33,6 +33,10 @@ html, body {
   min-height: 100%;
   width: 100%;
   background-color: var(--bg);
+  /* เพิ่มการป้องกันการเลือกข้อความในระดับราก */
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
 }
 
 :root {
@@ -78,6 +82,9 @@ body {
   border-radius: 26px;
   box-shadow: 0 8px 40px rgba(191,133,255,.35), 0 2px 8px rgba(0,0,0,.6);
   margin-bottom: 20px;
+  /* เพิ่มสองบรรทัดนี้เพื่อบล็อกการกดค้าง Save/Preview รูปภาพ */
+  pointer-events: none !important;
+  -webkit-user-drag: none !important;
 }
 
 .hero h1 {
@@ -171,6 +178,9 @@ body {
   border-radius: 13px;
   flex-shrink: 0;
   background: var(--surface2);
+  /* เพิ่มสองบรรทัดนี้เพื่อบล็อกการกดค้าง Save/Preview ไอคอนแพ็กเกจ */
+  pointer-events: none !important;
+  -webkit-user-drag: none !important;
 }
 
 .pkg-info { flex: 1; min-width: 0; }
