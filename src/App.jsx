@@ -25,7 +25,8 @@ const PACKAGES = [
     bundle: 'com.mobile.legends', 
     price: 'Free', 
     type: 'Decrypt', 
-    iconKey: 'mlbb' 
+    iconKey: 'mlbb',
+    downloadUrl: '/apps/com.mobile.legends_2.1.95_F1X3R-Decrypt.ipa'
   },
   { 
     id: 'cookierunclassic', 
@@ -35,7 +36,8 @@ const PACKAGES = [
     bundle: 'com.devsisters.crg', 
     price: 'Free', 
     type: 'Decrypt', 
-    iconKey: 'cookierunclassic' 
+    iconKey: 'cookierunclassic',
+    downloadUrl: '/apps/com.devsisters.crg_26.7.11_F1X3R-Decrypt.ipa'
   }
 ];
 
