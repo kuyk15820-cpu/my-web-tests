@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import DisableDevtool from 'disable-devtool';
 import './App.css';
 
@@ -19,21 +19,6 @@ if (pdfFonts && pdfFonts.pdfMake) {
 // อ้างอิงตัวแปรไว้สั้นๆ ด้านนอก Component เพื่อป้องกันไม่ให้ Vite ตัดโค้ดทิ้ง (Tree-Shaking)
 if (false) {
   console.log(pdfMake, jsPDF, Chart, echarts, moment, _);
-}
-
-// Component สำหรับรูปภาพ + Shimmer Skeleton
-function ShimmerImage({ src, alt, className }) {
-  const [loaded, setLoaded] = useState(false);
-
-  return (
-    <div className={`shimmer-wrapper ${className} ${loaded ? 'loaded' : 'loading'}`}>
-      <img 
-        src={src} 
-        alt={alt} 
-        onLoad={() => setLoaded(true)}
-      />
-    </div>
-  );
 }
 
 const PACKAGES = [
@@ -57,7 +42,7 @@ export default function App() {
   return (
     <>
       <div className="hero">
-        <ShimmerImage 
+        <img 
           className="hero-logo" 
           src="/images/F1X3R.png" 
           alt="F1X3R" 
@@ -76,7 +61,7 @@ export default function App() {
       <div className="pkg-grid">
         {PACKAGES.map((pkg) => (
           <div className="pkg-card" key={pkg.id}>
-            <ShimmerImage 
+            <img 
               className="pkg-icon" 
               src={`/images/${pkg.icon}`} 
               alt={`${pkg.name} icon`} 
