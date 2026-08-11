@@ -76,8 +76,8 @@ export default function App() {
                   </>
                 )}
               </div>
-              <div className="pkg-version">{pkg.version}</div>
-              <div className="pkg-bundle">{pkg.bundle}</div>
+              <div className="pkg-version">Version: {pkg.version}</div>
+              <div className="pkg-bundle">Identifier: {pkg.bundle}</div>
               <div className="pkg-tags">
                 {pkg.price && <span className="pkg-price">{pkg.price}</span>}
                 {pkg.type && <span className="pkg-type">{pkg.type}</span>}
