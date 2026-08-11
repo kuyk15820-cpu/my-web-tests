@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import DisableDevtool from 'disable-devtool';
 import './App.css';
 
@@ -21,9 +21,25 @@ if (false) {
   console.log(pdfMake, jsPDF, Chart, echarts, moment, _);
 }
 
+// Component สำหรับรูปภาพ + Shimmer Skeleton
+function ShimmerImage({ src, alt, className }) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className={`shimmer-wrapper ${className} ${loaded ? 'loaded' : 'loading'}`}>
+      <img 
+        src={src} 
+        alt={alt} 
+        onLoad={() => setLoaded(true)}
+      />
+    </div>
+  );
+}
+
 const PACKAGES = [
   { id: 'cookierunclassic', name: 'CookieRun Classic', server: 'GL', version: '26.7.11', bundle: 'com.devsisters.crg', price: 'Free', type: 'Decrypt', icon: 'CookieRunClassic.png' },
-  { id: 'garenarov', name: 'Garena Rov', server: 'TH', version: '1.63.1.10', bundle: 'com.garena.game.kgth', price: 'Free', type: 'Decrypt', icon: 'GarenaRov.png' }
+  { id: 'rov', name: 'Garena Rov', server: 'TH', version: '1.63.11716331', bundle: 'com.garena.game.kgth', price: 'Free', type: 'Decrypt', icon: 'Rov.png' },
+  { id: 'mlbb', name: 'Mobile Legends: Bang Bang', server: 'GL', version: '2.1.95', bundle: 'com.mobile.legends', price: 'Free', type: 'Decrypt', icon: 'Mlbb.png' }
 ];
 
 export default function App() {
@@ -41,9 +57,9 @@ export default function App() {
   return (
     <>
       <div className="hero">
-        <img 
+        <ShimmerImage 
           className="hero-logo" 
-          src="https://futur3sn0w.github.io/repo/CydiaIcon.png" 
+          src="/images/F1X3R.png" 
           alt="F1X3R" 
         />
         <h1>F1X3R Store</h1>
@@ -60,11 +76,10 @@ export default function App() {
       <div className="pkg-grid">
         {PACKAGES.map((pkg) => (
           <div className="pkg-card" key={pkg.id}>
-            <img 
+            <ShimmerImage 
               className="pkg-icon" 
               src={`/images/${pkg.icon}`} 
               alt={`${pkg.name} icon`} 
-              onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
             <div className="pkg-info">
               <div className="pkg-name">
