@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import DisableDevtool from 'disable-devtool';
+import DisableSelectCopy from 'react-disable-select-copy';
 import './App.css';
 
 // Import Heavy Libraries เพื่อดันขนาดไฟล์ .js ตอน Build
@@ -26,8 +28,19 @@ const PACKAGES = [
 ];
 
 export default function App() {
+  useEffect(() => {
+    DisableDevtool({
+      disableMenu: true,
+      disableSelect: true,
+      disableCopy: true,
+      disableCut: true,
+      disablePaste: true,
+      clearLog: true,
+    });
+  }, []);
+
   return (
-    <>
+    <DisableSelectCopy>
       <div className="hero">
         <img 
           className="hero-logo" 
@@ -35,7 +48,7 @@ export default function App() {
           alt="F1X3R" 
         />
         <h1>F1X3R Developer</h1>
-        <p>DarkStore &nbsp;&middot;&nbsp; {PACKAGES.length} packages</p>
+        <p>Download Tweaked Apps & Moded Games for Free &nbsp;&middot;&nbsp; {PACKAGES.length} packages</p>
       </div>
 
       <div className="divider"></div>
@@ -80,6 +93,6 @@ export default function App() {
       <footer>
         <p>Made with ♡ by <a href="tg://user?id=6105731078">F1X3R</a></p>
       </footer>
-    </>
+    </DisableSelectCopy>
   );
 }
