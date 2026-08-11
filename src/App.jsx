@@ -2,25 +2,6 @@ import React, { useEffect } from 'react';
 import DisableDevtool from 'disable-devtool';
 import './App.css';
 
-// Import Heavy Libraries เพื่อดันขนาดไฟล์ .js ตอน Build
-import pdfMake from "pdfmake/build/pdfmake";
-import pdfFonts from "pdfmake/build/vfs_fonts";
-import { jsPDF } from "jspdf";
-import Chart from "chart.js/auto";
-import * as echarts from "echarts";
-import moment from "moment-timezone";
-import _ from "lodash";
-
-// ผูก Font ของ pdfmake
-if (pdfFonts && pdfFonts.pdfMake) {
-  pdfMake.vfs = pdfFonts.pdfMake.vfs;
-}
-
-// อ้างอิงตัวแปรไว้สั้นๆ ด้านนอก Component เพื่อป้องกันไม่ให้ Vite ตัดโค้ดทิ้ง (Tree-Shaking)
-if (false) {
-  console.log(pdfMake, jsPDF, Chart, echarts, moment, _);
-}
-
 const PACKAGES = [
   { 
     id: 'rov', 
@@ -74,6 +55,8 @@ export default function App() {
           className="hero-logo" 
           src="/images/F1X3R.png" 
           alt="F1X3R" 
+          fetchPriority="high"
+          loading="eager"
         />
         <h1>F1X3R Store</h1>
         <p>Download Tweaked Apps & Moded Games for Free &nbsp;&middot;&nbsp; {PACKAGES.length} packages</p>
@@ -94,6 +77,7 @@ export default function App() {
                 className="pkg-icon" 
                 src={`/images/${pkg.icon}`} 
                 alt={`${pkg.name} icon`} 
+                loading="eager"
               />
               <div className="pkg-info">
                 <div className="pkg-name">
