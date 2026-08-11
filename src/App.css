@@ -209,8 +209,8 @@ body {
 .pkg-server {
   display: inline-block;
   font-size: .75rem;
-  color: var(--accent2);
-  background: rgba(88,166,255,.12);
+  color: #58a6ff;
+  background: rgba(88, 166, 255, 0.12);
   border-radius: 4px;
   padding: 1px 7px;
 }
