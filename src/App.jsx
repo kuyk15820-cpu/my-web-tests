@@ -21,7 +21,7 @@ if (false) {
 }
 
 const PACKAGES = [
-  { id: 'batterymirror', name: 'BatteryMirror', version: 'v0.0.4', bundle: 'com.futur3sn0w.batterymirror', price: 'Free', icon: 'com.futur3sn0w.batterymirror.png' },
+  { id: 'batterymirror', name: 'CookieRun Classic', version: '26.7.11', bundle: 'com.devsisters.crg', price: 'Free', icon: 'CookieRunClassic.png' },
   { id: 'battfx', name: 'BattFX', version: 'v0.0.5', bundle: 'com.futur3sn0w.battfx', price: 'Free', icon: 'com.futur3sn0w.battfx.png' },
   { id: 'ccaster', name: 'CCAster', version: 'v0.2.2', bundle: 'com.futur3sn0w.ccaster', price: 'Free', icon: 'com.futur3sn0w.ccaster.png' },
   { id: 'ccsupportbatteryfix', name: 'CCSupport Battery Fix', version: 'v0.0.2', bundle: 'com.futur3sn0w.ccsupportbatteryfix', price: 'Free', icon: 'com.futur3sn0w.ccsupportbatteryfix.png' },
@@ -64,7 +64,7 @@ export default function App() {
           <div className="pkg-card" key={pkg.id}>
             <img 
               className="pkg-icon" 
-              src={`https://futur3sn0w.github.io/repo/icons/${pkg.icon}`} 
+              src={`/images/${pkg.icon}`} 
               alt={`${pkg.name} icon`} 
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
