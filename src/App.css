@@ -210,7 +210,7 @@ body {
   display: inline-block;
   font-size: .75rem;
   color: var(--accent2);
-  background: rgba(94,183,255,.12);
+  background: rgba(88,166,255,.12);
   border-radius: 4px;
   padding: 1px 7px;
 }
