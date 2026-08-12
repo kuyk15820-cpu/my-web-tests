@@ -60,6 +60,7 @@ export default function App() {
           className="hero-logo" 
           src={LOGO_BASE64} 
           alt="F1X3R" 
+          onContextMenu={(e) => e.preventDefault()}
         />
         <h1>F1X3R Store</h1>
         <p>Download Tweaked Apps & Moded Games for Free &nbsp;&middot;&nbsp; {PACKAGES.length} packages</p>
@@ -80,6 +81,7 @@ export default function App() {
                 className="pkg-icon" 
                 src={ICONS_BASE64[pkg.iconKey]} 
                 alt={`${pkg.name} icon`} 
+                onContextMenu={(e) => e.preventDefault()}
               />
               <div className="pkg-info">
                 <div className="pkg-name">
