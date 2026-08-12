@@ -33,7 +33,6 @@ html, body {
   min-height: 100%;
   width: 100%;
   background-color: var(--bg);
-  /* เพิ่มการป้องกันการเลือกข้อความในระดับราก */
   -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
   user-select: none !important;
@@ -82,7 +81,6 @@ body {
   border-radius: 26px;
   box-shadow: 0 8px 40px rgba(191,133,255,.35), 0 2px 8px rgba(0,0,0,.6);
   margin-bottom: 20px;
-  /* เพิ่มสองบรรทัดนี้เพื่อบล็อกการกดค้าง Save/Preview รูปภาพ */
   pointer-events: none !important;
   -webkit-user-drag: none !important;
 }
@@ -178,7 +176,6 @@ body {
   border-radius: 13px;
   flex-shrink: 0;
   background: var(--surface2);
-  /* เพิ่มสองบรรทัดนี้เพื่อบล็อกการกดค้าง Save/Preview ไอคอนแพ็กเกจ */
   pointer-events: none !important;
   -webkit-user-drag: none !important;
 }
@@ -192,7 +189,6 @@ body {
   word-break: break-word;
 }
 
-/* ใช้ฟอนต์ Semakin + สีเหลืองเข้มสำหรับข้อความ Server */
 .pkg-server-text {
   color: #e3b341;
   font-family: 'Semakin', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -235,6 +231,17 @@ body {
   font-size: .75rem;
   color: #4cd964;
   background: rgba(76,217,100,.12);
+  border-radius: 4px;
+  padding: 1px 7px;
+}
+
+/* แท็กแสดงยอดดาวน์โหลดสีเทา */
+.pkg-downloads {
+  display: inline-block;
+  font-size: .75rem;
+  color: var(--muted);
+  background: var(--surface2);
+  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 1px 7px;
 }
