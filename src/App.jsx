@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import DisableDevtool from 'disable-devtool';
 import './App.css';
 
@@ -41,7 +42,7 @@ const PACKAGES = [
   }
 ];
 
-export default function App() {
+function MainStore() {
   useEffect(() => {
     DisableDevtool({
       disableMenu: true,
@@ -52,6 +53,17 @@ export default function App() {
       clearLog: true,
     });
   }, []);
+
+  const handleDownload = (e, downloadUrl) => {
+    e.preventDefault();
+    if (!downloadUrl) return;
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.setAttribute('download', '');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <>
@@ -102,15 +114,14 @@ export default function App() {
           );
 
           return pkg.downloadUrl ? (
-            <a 
+            <div 
               key={pkg.id} 
-              href={pkg.downloadUrl} 
-              download 
+              onClick={(e) => handleDownload(e, pkg.downloadUrl)}
               className="pkg-card"
-              style={{ textDecoration: 'none', color: 'inherit' }}
+              style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
             >
               {CardContent}
-            </a>
+            </div>
           ) : (
             <div className="pkg-card" key={pkg.id}>
               {CardContent}
@@ -125,5 +136,17 @@ export default function App() {
         <p>Made with ♡ by <a href="tg://user?id=6105731078">F1X3R</a></p>
       </footer>
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainStore />} />
+        <Route path="/apps/*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
